@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <record id="work_place_view_tree" model="ir.ui.view">
+        <field name="name">work.place.view.tree</field>
+        <field name="model">work.place</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="work_place_view_form" model="ir.ui.view">
+        <field name="name">work.place.view.form</field>
+        <field name="model">work.place</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="work_place_action" model="ir.actions.act_window">
+        <field name="name">Work Place</field>
+        <field name="res_model">work.place</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="work_place_menu"
+        name="Work Place"
+        action="work_place_action"
+        parent="contacts.res_partner_menu_config"
+        sequence="20"/>
+
+  </data>
+</odoo>
